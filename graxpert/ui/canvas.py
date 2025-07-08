@@ -54,7 +54,12 @@ class Canvas(CTkFrame):
             hover_color=ThemeManager.theme["Help.CTkButton"]["hover_color"],
             command=lambda: eventbus.emit(UiEvents.HELP_FRAME_TOGGLED),
         )
-        self.advanced_button = CTkButton(self.canvas, text=_("A\nD\nV\nA\nN\nC\nE\nD"), width=0, bg_color="transparent", command=lambda: eventbus.emit(UiEvents.ADVANCED_FRAME_TOGGLED))
+        self.advanced_button = CTkButton(
+            self.canvas,
+            text=_("A\nD\nV\nA\nN\nC\nE\nD"),
+            width=0,
+            bg_color="transparent",
+            command=lambda: eventbus.emit(UiEvents.ADVANCED_FRAME_TOGGLED))
         self.static_loading_frame = LoadingFrame(self.canvas, width=0, height=0)
         self.dynamic_progress_frame = DynamicProgressFrame(self.canvas)
 
